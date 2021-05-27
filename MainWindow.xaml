@@ -1,0 +1,66 @@
+﻿<Window x:Class="Wumpus_171220087_AhmetCanAydemir.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wumpus_171220087_AhmetCanAydemir"
+        mc:Ignorable="d"
+        Title="171220087 Ahmet Can Aydemir Wumpus Oyunu" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Border Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="400"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border>
+                <Grid Grid.Column="0" x:Name="Alan" MouseDown="Alan_MouseDown" FocusManager.IsFocusScope="True" KeyDown="Alan_KeyDown">
+                </Grid>
+            </Border>
+
+            <StackPanel Grid.Column="1" x:Name="SagPanel">
+                <TextBlock FontWeight="Bold">Oyun Ayarları</TextBlock>
+
+                <StackPanel Orientation="Horizontal">
+                    <Label  Width="100">Kare (NxN):</Label>
+                    <TextBox  x:Name="txtKareSayisi" Width="80" VerticalContentAlignment="Center">4</TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label  Width="100">Wumpus Sayısı: </Label>
+                    <TextBox  x:Name="txtWumpusSayisi" Width="80" VerticalContentAlignment="Center">1</TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="100">Altın Sayısı:</Label>
+                    <TextBox  x:Name="txtAltinSayisi" Width="80" VerticalContentAlignment="Center">1</TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="100">Çukur Sayısı:</Label>
+                    <TextBox  x:Name="txtCukurSayisi" Width="80" VerticalContentAlignment="Center">3</TextBox>
+                </StackPanel>
+                <Button  x:Name="btnYenidenBaslat" Content="Oyunu Yeniden Başlat" Click="btnYenidenBaslat_Click" PreviewKeyDown="btnYenidenBaslat_PreviewKeyDown"></Button>
+
+                <TextBlock FontWeight="Bold" Margin="0 20 0 0">Oyun İçi</TextBlock>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="100">Puan</Label>
+                    <TextBox x:Name="txtPuan" IsReadOnly="True" Width="80" VerticalContentAlignment="Center" Background="LightGray" Focusable="False">0</TextBox>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="100">Kalan Ok:</Label>
+                    <TextBox  x:Name="txtKalanOk" IsReadOnly="True" Width="80" VerticalContentAlignment="Center" Background="LightGray" Focusable="False">1</TextBox>
+                </StackPanel>
+
+                <CheckBox  x:Name="chkSonrakiAdimdaOkAtilsin" FontSize="10px" Margin="0 10 0 0 " Focusable="False">Sonraki adımda gittiğim yöne ok atılsın?</CheckBox>
+                <TextBlock FontWeight="Bold" Margin="0 20 0 0">Klavye Kısayolları</TextBlock>
+                    <Label>Hareket: Yön Tuşları</Label>
+                    <Label>Boşluk: Oku hazırla (sonraki adım)</Label>
+                <Label>A : Altını al</Label>
+
+                <TextBlock FontWeight="Bold" Margin="0 20 0 0">Güvenlik kontrolü</TextBlock>
+                <RichTextBox x:Name="rchKontrolLog" VerticalScrollBarVisibility="Auto" Height="400"></RichTextBox>
+
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
